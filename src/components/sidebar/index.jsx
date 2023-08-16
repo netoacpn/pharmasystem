@@ -24,7 +24,7 @@ function Sidebar({ active }){
         <SidebarItem to="/" Icon={FaHome} Text="Home" />
         <SidebarItem to="/mapa" Icon={FaMapMarkedAlt} Text="Mapa" />
         <SidebarItem to="/cadastro-farmacia" Icon={FaRegBuilding} Text="Cadastro de Farmácia" />
-        <SidebarItem to="/lista-medicamento" Icon={FaListOl} Text="Lista de Medicamentos" />
+        <SidebarItem to="/lista-medicamentos" Icon={FaListOl} Text="Lista de Medicamentos" />
         <SidebarItem to="/cadastro-medicamento" Icon={FaMedkit} Text="Cadastro de Medicamento" />
       </Content>
     </Container>
