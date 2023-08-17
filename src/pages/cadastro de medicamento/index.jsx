@@ -1,16 +1,16 @@
-import { MedicamentosContextProvider } from "../../context/MedicamentosContext"
 import { Header } from "../../components/header"
+import { Container } from "@mui/material" 
 import { FormularioNovoMedicamento } from "../../components/cadmedform"
 
 
 function CadastroMedicamento(){
   return(
     <>
-      <MedicamentosContextProvider>
-        <Header />
+      <Header />
+      <Container>
         <h1>Cadastro de Medicamentos</h1>
         <FormularioNovoMedicamento />
-      </MedicamentosContextProvider>
+      </Container>
     </>
   )
 }

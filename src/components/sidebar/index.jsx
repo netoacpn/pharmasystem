@@ -22,10 +22,10 @@ function Sidebar({ active }){
       <FaTimes onClick={closeSidebar} />  
       <Content>
         <SidebarItem to="/" Icon={FaHome} Text="Home" />
-        <SidebarItem to="/mapa" Icon={FaMapMarkedAlt} Text="Mapa" />
         <SidebarItem to="/cadastro-farmacia" Icon={FaRegBuilding} Text="Cadastro de Farmácia" />
-        <SidebarItem to="/lista-medicamentos" Icon={FaListOl} Text="Lista de Medicamentos" />
+        <SidebarItem to="/mapa" Icon={FaMapMarkedAlt} Text="Mapa" />
         <SidebarItem to="/cadastro-medicamento" Icon={FaMedkit} Text="Cadastro de Medicamento" />
+        <SidebarItem to="/lista-medicamentos" Icon={FaListOl} Text="Lista de Medicamentos" />
       </Content>
     </Container>
   )
