@@ -1,5 +1,5 @@
 import { Header } from "../../components/header"
-import { Container } from "@mui/material" 
+import { Box, Container, Typography } from "@mui/material" 
 import { FormularioNovoMedicamento } from "../../components/cadmedform"
 
 
@@ -8,7 +8,9 @@ function CadastroMedicamento(){
     <>
       <Header />
       <Container>
-        <h1>Cadastro de Medicamentos</h1>
+        <Box>
+          <Typography variant="h3" gutterBottom sx={{m: "15px", alignItems: "center", textAlign: "center"}}>Cadastro de Farmácias</Typography>
+        </Box>
         <FormularioNovoMedicamento />
       </Container>
     </>
