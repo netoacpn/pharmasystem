@@ -1,12 +1,16 @@
-import { RoutesApp } from './routes'
 import './App.css'
+import { RoutesApp } from './routes'
+import { BrowserRouter } from 'react-router-dom'
+import { LocalStorageProvider } from './context/LocalStorageContext'
 
 function App() {
 
   return (
-    <>
-      <RoutesApp />
-    </>
+    <BrowserRouter>
+      <LocalStorageProvider>
+        <RoutesApp />
+      </ LocalStorageProvider>
+    </BrowserRouter>
   )
 }
 

@@ -1,26 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login } from "../pages/login"
-import { Mapa } from "../pages/mapa"
-import { CadastroFarmacia } from "../pages/cadastro de farmácia"
-import { CadastroMedicamento } from "../pages/cadastro de medicamento"
-import { ListaMedicamentos } from "../pages/lista medicamento"
-import { NotFound } from "../pages/404"
+import { loginApp } from "../hooks/loginApp";
+import { PrivateRoutes } from "./privateRoutes";
+import { PublicRoutes } from "./publicRoutes";
 
 
 function RoutesApp(){
+  const { value } = loginApp()
+  
+  if(value?.email){
+    return(
+      <PrivateRoutes />
+    )
+  }
   return(
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Login />} path="/"/>
-          <Route element={<Mapa />} path="/mapa"/>
-          <Route element={<CadastroFarmacia />} path="/cadastro-farmacia"/>
-          <Route element={<CadastroMedicamento />} path="/cadastro-medicamento"/>
-          <Route element={<ListaMedicamentos />} path="/lista-medicamentos"/>
-          <Route element={<NotFound />} path="*"/>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <PublicRoutes />    
   )
 }
 
