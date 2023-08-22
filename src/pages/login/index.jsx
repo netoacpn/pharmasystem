@@ -1,10 +1,17 @@
 import { Header } from "../../components/header"
+import { Container, Box, Typography } from "@mui/material"
+import { FormularioLogin } from "../../components/loginform"
 
 function Login(){
   return(
     <>
       <Header />
-      <h1>Login</h1>
+      <Container>
+        <Box>
+          <Typography variant="h3" gutterBottom sx={{m: "15px", alignItems: "center", textAlign: "center"}}>Login</Typography>
+        </Box>
+        <FormularioLogin />
+      </Container>
     </>
   )
 }
