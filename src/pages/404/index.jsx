@@ -1,4 +1,4 @@
-import { Header } from "../../components/header"
+import { Header } from "../../components/header/index.jsx"
 
 function NotFound(){
   return(
@@ -9,4 +9,4 @@ function NotFound(){
   )
 }
 
-export { NotFound}
+export { NotFound }

@@ -1,4 +1,4 @@
-import { Header } from "../../components/header"
+import { Header } from "../../components/header/index.jsx"
 import { Box, Container, Typography } from "@mui/material" 
 import { FormularioNovoMedicamento } from "../../components/cadmedform"
 

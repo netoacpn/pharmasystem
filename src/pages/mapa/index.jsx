@@ -1,5 +1,5 @@
 import { Container, Box, Typography } from "@mui/material"
-import { Header } from "../../components/header"
+import { Header } from "../../components/header/index.jsx"
 import { MapaComponente } from "../../components/mapa"
 
 

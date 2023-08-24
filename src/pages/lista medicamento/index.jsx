@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { MedicamentosContext } from "../../context/MedicamentosContext"
 
-import { Header } from "../../components/header"
+import { Header } from "../../components/header/index.jsx"
 import { Container, Box, Grid, Typography } from "@mui/material"
 import CardMedicamento from "../../components/cardmedicamento"
 
