@@ -13,11 +13,6 @@ import SideBar from "../sidebar/index"
 function Header() {
   const [auth, setAuth] = React.useState(true);
 
-
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
   const handleLogout = (event) => {
     logoutApp()
   }

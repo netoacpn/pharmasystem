@@ -1,7 +1,7 @@
 import React from "react"
 import { useContext, useState } from "react"
 import { FarmaciasContext } from "../../context/FarmaciasContext"
-import { Container, TextField, ButtonGroup, Button, Box, Typography } from "@mui/material"
+import { Container, TextField, ButtonGroup, Button, Box, Typography, InputAdornment } from "@mui/material"
 
 function FormularioNovaFarmacia(){
   
@@ -27,21 +27,7 @@ function FormularioNovaFarmacia(){
     e.preventDefault()
 
     AdicionarFarmacia(razaoSocial, cnpj, nomeFantasia, email, telefone, celular, cep, logradouro, numero, bairro, cidade, estado, complemento, latitude, longitude)
-    setRazaoSocial("")
-    setCnpj(0)
-    setNomeFantasia("")
-    setEmail("")
-    setTelefone(0)
-    setCelular(0)
-    setCep(0)
-    setLogradouro("")
-    setNumero(0)
-    setBairro("")
-    setCidade("")
-    setEstado("")
-    setComplemento("")
-    setLatitude(0)
-    setLongitude(0)
+    handleReset()
   }
 
   const handleReset = () => {
@@ -62,6 +48,26 @@ function FormularioNovaFarmacia(){
     setLongitude(0)
   }
 
+  const handleCepBlur = (e) => {
+    const {value} = e.target
+    const cep = value.replace(/[^0-9]/g, "")
+    if (cep.length === 8) {
+      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (!data.erro) {
+            setLogradouro(data.logradouro);
+            setBairro(data.bairro);
+            setCidade(data.localidade);
+            setEstado(data.uf);
+          }
+        })
+        .catch((error) => {
+          console.error("Erro ao consultar o CEP: ", error);
+        });
+    }
+  };
+
   return(
     <>
       <Container >        
@@ -71,12 +77,59 @@ function FormularioNovaFarmacia(){
           </Typography>
         </Box>
         <Box component="form" sx={{m: 1}} onSubmit={handleSubmit} onReset={handleReset}>
-          <TextField sx={{m: 1}} required id="outlined-required" label="Razão Social" value={razaoSocial} onChange={(e) => setRazaoSocial(e.target.value)}/>
-          <TextField sx={{m: 1}} required id="outlined-required" label="CNPJ" value={cnpj} onChange={(e) => setCnpj(Number(e.target.value))}/>
-          <TextField sx={{m: 1}} required id="outlined-required" label="Nome Fantasia" value={nomeFantasia} onChange={(e) => setNomeFantasia(e.target.value)}/>
-          <TextField sx={{m: 1}} required id="outlined-required" label="E-mail" value={email} onChange={(e) => setEmail(e.target.value)}/>
-          <TextField sx={{m: 1}} id="outlined" label="Telefone" value={telefone} onChange={(e) => setTelefone(Number(e.target.value))}/>
-          <TextField sx={{m: 1}} required id="outlined-required" label="Celular" value={celular} onChange={(e) => setCelular(Number(e.target.value))}/>
+          <TextField
+            sx={{m: 1}}
+            required
+            id="outlined-required"
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            label="Razão Social"
+            value={razaoSocial}
+            onChange={(e) => setRazaoSocial(e.target.value)}
+          />
+          <TextField
+            sx={{m: 1}}
+            required
+            id="outlined-required"
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            label="CNPJ"
+            value={cnpj}
+            onChange={(e) => setCnpj(Number(e.target.value))}
+          />
+          <TextField
+            sx={{m: 1}}
+            required
+            id="outlined-required"
+            label="Nome Fantasia"
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            value={nomeFantasia}
+            onChange={(e) => setNomeFantasia(e.target.value)}
+          />
+          <TextField
+            sx={{m: 1}}
+            required
+            id="outlined-required"
+            label="E-mail"
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <TextField
+            sx={{m: 1}}
+            id="outlined"
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            label="Telefone"
+            value={telefone}
+            onChange={(e) => setTelefone(Number(e.target.value))}
+          />
+          <TextField
+            sx={{m: 1}}
+            required
+            id="outlined-required"
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            label="Celular"
+            value={celular}
+            onChange={(e) => setCelular(Number(e.target.value))}
+          />
         </Box>
         <Box sx={{m: 1}}> 
           <Typography sx={{m: 1}} variant="h4" gutterBottom>
@@ -84,19 +137,73 @@ function FormularioNovaFarmacia(){
           </Typography>
         </Box>
         <Box component="form" sx={{m: 1}} onSubmit={handleSubmit} onReset={handleReset}>
-          <TextField sx={{m: 1}} required id="outlined-required" label="CEP" value={cep} onChange={(e) => setCep(Number(e.target.value))}/>
-          <TextField sx={{m: 1}} required id="outlined-required" label="Logradouro/Endereço" value={logradouro} onChange={(e) => setLogradouro(e.target.value)}/>
-          <TextField sx={{m: 1}} required id="outlined-required" label="Número" value={numero} onChange={(e) => setNumero(Number(e.target.value))}/>
-          <TextField sx={{m: 1}} required id="outlined-required" label="Bairro" value={bairro} onChange={(e) => setBairro(e.target.value)}/>
-          <TextField sx={{m: 1}} required id="outlined-required" label="Cidade" value={cidade} onChange={(e) => setCidade(e.target.value)}/>
-          <TextField sx={{m: 1}} required id="outlined-required" label="Estado" value={estado} onChange={(e) => setEstado(e.target.value)}/>
-          <TextField sx={{m: 1}} id="outlined" label="Complemento" value={complemento} onChange={(e) => setComplemento(e.target.value)}/>
+          <TextField
+            sx={{m: 1}}
+            required
+            id="outlined-required"
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            label="CEP"
+            value={cep}
+            onChange={(e) => setCep(Number(e.target.value))}
+            onBlur={(e)=>handleCepBlur(e)}
+          
+          />
+          <TextField
+            sx={{m: 1}}
+            required 
+            id="outlined-required" 
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            label="Logradouro/Endereço"
+            value={logradouro} onChange={(e) => setLogradouro(e.target.value)}
+          />
+          <TextField 
+            sx={{m: 1}} 
+            required 
+            id="outlined-required" 
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            label="Número" 
+            value={numero} onChange={(e) => setNumero(Number(e.target.value))}
+          />
+          <TextField 
+            sx={{m: 1}} 
+            required 
+            id="outlined-required" 
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            label="Bairro" 
+            value={bairro}
+            onChange={(e) => setBairro(e.target.value)}
+          />
+          <TextField 
+            sx={{m: 1}} 
+            required 
+            id="outlined-required" 
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            label="Cidade" 
+            value={cidade}
+            onChange={(e) => setCidade(e.target.value)}            
+          />
+          <TextField 
+            sx={{m: 1}} 
+            required 
+            id="outlined-required" 
+            InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
+            label="Estado" 
+            value={estado} 
+            onChange={(e) => setEstado(e.target.value)}
+          />
+          <TextField
+            sx={{m: 1}}
+            id="outlined"
+            label="Complemento"
+            value={complemento}
+            onChange={(e) => setComplemento(e.target.value)}
+          />
         </Box>
-        <Box component="form" sx={{m: 1}} onSubmit={handleSubmit} onReset={handleReset}> 
+        <Box component="form" sx={{m: 1}} onSubmit={handleSubmit} onReset={handleReset} > 
           <TextField sx={{m: 1}} required id="outlined-required" label="Latitude" value={latitude} onChange={(e) => setLatitude(Number(e.target.value))}/>
           <TextField sx={{m: 1}} required id="outlined-required" label="Longidute" value={longitude} onChange={(e) => setLongitude(Number(e.target.value))}/>
         </Box>
-        <Box component="form" sx={{m: 1}} onSubmit={handleSubmit} onReset={handleReset}>
+        <Box component="form" sx={{m: 1}} onSubmit={handleSubmit} onReset={handleReset} >
           <ButtonGroup sx={{m: 1}} variant="contained" aria-label="outlined primary button group">
             <Button type="submit" color="primary">Cadastrar</Button>
             <Button type="reset" color="primary">Limpar</Button>

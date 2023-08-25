@@ -8,7 +8,7 @@ function MapaComponente(){
   const {listaFarmacias} = useContext(FarmaciasContext)
     
   return(
-      <MapContainer center={[-26.476049, -48.995972]} zoom={12} scrollWheelZoom={true} style={{width: '100%', height: '80vh'}}>
+      <MapContainer center={[-27.500000, -51.000000]} zoom={8} scrollWheelZoom={true} style={{width: '100%', height: '80vh'}}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
