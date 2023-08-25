@@ -8,20 +8,20 @@ function FormularioNovaFarmacia(){
   const {AdicionarFarmacia} = useContext(FarmaciasContext)
 
   const [razaoSocial, setRazaoSocial] = useState("")
-  const [cnpj, setCnpj] = useState(0)
+  const [cnpj, setCnpj] = useState("")
   const [nomeFantasia, setNomeFantasia] = useState("")
   const [email, setEmail] = useState("")
-  const [telefone, setTelefone] = useState(0)
-  const [celular, setCelular] = useState(0)
-  const [cep, setCep] = useState(0)
+  const [telefone, setTelefone] = useState("")
+  const [celular, setCelular] = useState("")
+  const [cep, setCep] = useState("")
   const [logradouro, setLogradouro] = useState("")
-  const [numero, setNumero] = useState(0)
+  const [numero, setNumero] = useState("")
   const [bairro, setBairro] = useState("")
   const [cidade, setCidade] = useState("")
   const [estado, setEstado] = useState("")
   const [complemento, setComplemento] = useState("")
-  const [latitude, setLatitude] = useState(0)
-  const [longitude, setLongitude] = useState(0)
+  const [latitude, setLatitude] = useState("")
+  const [longitude, setLongitude] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -32,20 +32,20 @@ function FormularioNovaFarmacia(){
 
   const handleReset = () => {
     setRazaoSocial("")
-    setCnpj(0)
+    setCnpj("")
     setNomeFantasia("")
     setEmail("")
-    setTelefone(0)
-    setCelular(0)
-    setCep(0)
+    setTelefone("")
+    setCelular("")
+    setCep("")
     setLogradouro("")
-    setNumero(0)
+    setNumero("")
     setBairro("")
     setCidade("")
     setEstado("")
     setComplemento("")
-    setLatitude(0)
-    setLongitude(0)
+    setLatitude("")
+    setLongitude("")
   }
 
   const handleCepBlur = (e) => {
@@ -200,8 +200,22 @@ function FormularioNovaFarmacia(){
           />
         </Box>
         <Box component="form" sx={{m: 1}} onSubmit={handleSubmit} onReset={handleReset} > 
-          <TextField sx={{m: 1}} required id="outlined-required" label="Latitude" value={latitude} onChange={(e) => setLatitude(Number(e.target.value))}/>
-          <TextField sx={{m: 1}} required id="outlined-required" label="Longidute" value={longitude} onChange={(e) => setLongitude(Number(e.target.value))}/>
+          <TextField
+            sx={{m: 1}}
+            required 
+            id="outlined-required" 
+            label="Latitude" 
+            value={latitude} 
+            onChange={(e) => setLatitude(e.target.value)}
+          />
+          <TextField
+            sx={{m: 1}}
+            required
+            id="outlined-required"
+            label="Longidute"
+            value={longitude}
+            onChange={(e) => setLongitude(e.target.value)}
+          />
         </Box>
         <Box component="form" sx={{m: 1}} onSubmit={handleSubmit} onReset={handleReset} >
           <ButtonGroup sx={{m: 1}} variant="contained" aria-label="outlined primary button group">

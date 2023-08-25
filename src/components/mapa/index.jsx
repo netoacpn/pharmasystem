@@ -20,15 +20,15 @@ function MapaComponente(){
             CNPJ: {farmacia.cnpj} <br/>
             Nome Fantasia: {farmacia.nomeFantasia} <br/>
             E-mail: {farmacia.email} <br/>
-            Telefone: {farmacia.telefone} <br/>
-            Celular: {farmacia.celular} <br/>
+            {farmacia.telefone && (<>Telefone: {farmacia.telefone}<br /></>)}
+            Celular: <a href={`https://wa.me/55${farmacia.celular}`}>{farmacia.celular}</a><br/>
             CEP: {farmacia.cep} <br/>
             Logradouro: {farmacia.logradouro} <br/>
             Número: {farmacia.numero} <br/>
             Bairro: {farmacia.bairro} <br/>
             Cidade: {farmacia.cidade} <br/>
             Estado: {farmacia.estado} <br/>
-            Complemento: {farmacia.complemento}  
+            {farmacia.complemento && (<>Complemento: {farmacia.complemento}<br /></>)}
             </Popup>
           </Marker>
         ))}
