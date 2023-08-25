@@ -43,7 +43,7 @@ function CardMedicamento({medicamento}) {
       <CardMedia
         component="img"
         height="auto"
-        image="/src/components/img/med-gen.jpg"
+        image="https://site.abcfarma.org.br/wp-content/uploads/2019/10/med-gen.jpg"
         alt="Foto Caixa do Medicamento"
       />
       <CardContent>

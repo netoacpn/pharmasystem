@@ -1,11 +1,17 @@
 import { useContext } from "react"
 import { FarmaciasContext } from "../../context/FarmaciasContext"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Icon } from "leaflet"
 import 'leaflet/dist/leaflet.css'
 
 function MapaComponente(){
 
   const {listaFarmacias} = useContext(FarmaciasContext)
+
+  const customIcon = new Icon({
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/4360/4360618.png",
+    iconSize: [38, 40]
+  })
     
   return(
       <MapContainer center={[-27.500000, -51.000000]} zoom={8} scrollWheelZoom={true} style={{width: '100%', height: '80vh'}}>
@@ -14,7 +20,7 @@ function MapaComponente(){
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {listaFarmacias.map((farmacia) => (
-          <Marker key={farmacia.id} position={[farmacia.latitude, farmacia.longitude]}>
+          <Marker key={farmacia.id} position={[farmacia.latitude, farmacia.longitude]} icon={customIcon}>
             <Popup>
             Razão Social: {farmacia.razaoSocial} <br/>
             CNPJ: {farmacia.cnpj} <br/>
