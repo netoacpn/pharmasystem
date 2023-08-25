@@ -4,11 +4,13 @@ import { CadastroFarmacia } from "../pages/cadastro de farmácia"
 import { CadastroMedicamento } from "../pages/cadastro de medicamento"
 import { ListaMedicamentos } from "../pages/lista medicamento"
 import { NotFound } from "../pages/404"
+import { Home } from "../pages/home";
 
 function PrivateRoutes(){
   return(
     <>
       <Routes>
+        <Route element={<Home />} path="/" />
         <Route element={<Mapa />} path="/mapa"/>
         <Route element={<CadastroFarmacia />} path="/cadastro-farmacia"/>
         <Route element={<CadastroMedicamento />} path="/cadastro-medicamento"/>
