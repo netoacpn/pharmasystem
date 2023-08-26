@@ -1,14 +1,30 @@
 import { createContext, useState } from "react";
 
-export const MedicamentosContext = createContext()
-export const MedicamentosContextProvider = ({children}) => {
+export const MedicamentosContext = createContext();
+export const MedicamentosContextProvider = ({ children }) => {
+  const [listaMedicamentos, setListaMedicamentos] = useState(
+    JSON.parse(localStorage.getItem("listaMedicamentos")) || []
+  );
+  const [listaMedicamentosOriginal, setListaMedicamentosOriginal] = useState(listaMedicamentos);
 
-  const [listaMedicamentos, setListaMedicamentos] = useState(JSON.parse(localStorage.getItem("listaMedicamentos")) || [])
-
-  const AdicionarMedicamento = (nome, laboratorio, dosagem, tipo, preco, descricao) => {
-    if(nome.length == "" || laboratorio.length == "" || dosagem == 0 || tipo.length == "" || preco == 0 || descricao == ""){
-      alert("Campos não preenchidos corretamente!")
-      return
+  const AdicionarMedicamento = (
+    nome,
+    laboratorio,
+    dosagem,
+    tipo,
+    preco,
+    descricao
+  ) => {
+    if (
+      nome.length == "" ||
+      laboratorio.length == "" ||
+      dosagem == 0 ||
+      tipo.length == "" ||
+      preco == 0 ||
+      descricao == ""
+    ) {
+      alert("Campos não preenchidos corretamente!");
+      return;
     }
 
     const novoMedicamento = {
@@ -18,19 +34,43 @@ export const MedicamentosContextProvider = ({children}) => {
       dosagem: dosagem,
       tipo: tipo,
       preco: preco,
-      descricao: descricao      
+      descricao: descricao,
+    };
+
+    const novaLista = [...listaMedicamentos, novoMedicamento];
+    localStorage.setItem("listaMedicamentos", JSON.stringify(novaLista));
+    setListaMedicamentos(novaLista);
+    setListaMedicamentosOriginal(novaLista);
+    alert("Medicamento Cadastrado com sucesso!");
+    console.log(novaLista);
+  };
+
+  const PesquisarMedicamentos = (termo) => {
+    if (!termo) {
+      setListaMedicamentos(listaMedicamentosOriginal);
+      return;
     }
 
-    const novaLista = [...listaMedicamentos, novoMedicamento]
-    localStorage.setItem("listaMedicamentos", JSON.stringify(novaLista))
-    setListaMedicamentos(novaLista)
-    alert("Medicamento Cadastrado com sucesso!")
-    console.log(novaLista)
-  }
-  
-  return(
-    <MedicamentosContext.Provider value={{listaMedicamentos, AdicionarMedicamento}}>
+    const termoLowerCase = termo.toLowerCase().trim();
+
+    const itensFiltrados = listaMedicamentosOriginal.filter((item) => {
+      const lowerNome = item.nome.toLowerCase();
+
+      return lowerNome.includes(termoLowerCase);
+    });
+
+    if (itensFiltrados.length >= 1) {
+      setListaMedicamentos(itensFiltrados);
+    } else {
+      setListaMedicamentos([]);
+    }
+  };
+
+  return (
+    <MedicamentosContext.Provider
+      value={{ listaMedicamentos, AdicionarMedicamento, PesquisarMedicamentos }}
+    >
       {children}
     </MedicamentosContext.Provider>
-  )
-}
+  );
+};
