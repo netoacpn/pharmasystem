@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,6 +12,7 @@ import SideBar from "../sidebar/index"
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import { MedicamentosContext } from '../../context/MedicamentosContext';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -56,6 +57,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 function HeaderLista() {
   const [auth, setAuth] = React.useState(true);
+  const {PesquisarMedicamentos} = useContext(MedicamentosContext)
 
   const handleLogout = (event) => {
     logoutApp()
@@ -110,6 +112,7 @@ function HeaderLista() {
               <StyledInputBase
                 placeholder="Pesquisar…"
                 inputProps={{ 'aria-label': 'search' }}
+                onChange={e => PesquisarMedicamentos(e.target.value)}
               />
             </Search>
           <IconButton

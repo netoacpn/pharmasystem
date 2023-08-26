@@ -5,17 +5,18 @@ import { CadastroMedicamento } from "../pages/cadastro de medicamento"
 import { ListaMedicamentos } from "../pages/lista medicamento"
 import { NotFound } from "../pages/404"
 import { Home } from "../pages/home";
+import ROUTES_PATH from "./routesPath.js"
 
 function PrivateRoutes(){
   return(
     <>
       <Routes>
-        <Route element={<Home />} path="/" />
-        <Route element={<Mapa />} path="/mapa"/>
-        <Route element={<CadastroFarmacia />} path="/cadastro-farmacia"/>
-        <Route element={<CadastroMedicamento />} path="/cadastro-medicamento"/>
-        <Route element={<ListaMedicamentos />} path="/lista-medicamentos"/>
-        <Route element={<NotFound />} path="*"/>
+        <Route element={<Home />} path={ROUTES_PATH.inicio} />
+        <Route element={<Mapa />} path={ROUTES_PATH.mapa}/>
+        <Route element={<CadastroFarmacia />} path={ROUTES_PATH.cadastroFarmacia}/>
+        <Route element={<CadastroMedicamento />} path={ROUTES_PATH.cadastroMedicamentos}/>
+        <Route element={<ListaMedicamentos />} path={ROUTES_PATH.listaMedicamentos}/>
+        <Route element={<NotFound />} path={ROUTES_PATH.notFound}/>
       </Routes>
     </>
   )
