@@ -57,7 +57,7 @@ function Header() {
           <WebhookIcon />
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            DEVinPharmacy
+            PharmaSystem
           </Typography>
           
               <IconButton

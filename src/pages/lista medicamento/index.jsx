@@ -1,7 +1,6 @@
-import { useContext } from "react"
+import React, { useContext } from "react"
 import { MedicamentosContext } from "../../context/MedicamentosContext"
-
-import { Header } from "../../components/header/index.jsx"
+import { HeaderLista } from "../../components/headerpesquisa"
 import { Container, Box, Grid, Typography } from "@mui/material"
 import CardMedicamento from "../../components/cardmedicamento"
 
@@ -11,7 +10,7 @@ function ListaMedicamentos(){
 
   return(
     <>
-      <Header />
+      <HeaderLista />
       <Container>     
         <Box>
           <Typography variant="h3" gutterBottom sx={{m: "15px", alignItems: "center", textAlign: "center"}}>Lista de Medicamentos</Typography>
