@@ -9,7 +9,9 @@ import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { MedicamentosContext } from '../../context/MedicamentosContext';
+import { useContext } from 'react';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -25,6 +27,8 @@ const ExpandMore = styled((props) => {
 function CardMedicamento({medicamento}) {
   const [expanded, setExpanded] = React.useState(false);
 
+  const { removerMedicamento } = useContext(MedicamentosContext)
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -33,8 +37,8 @@ function CardMedicamento({medicamento}) {
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
+          <IconButton aria-label="settings" onClick={e => removerMedicamento(medicamento.id)}>
+            <DeleteIcon />
           </IconButton>
         }
         title={medicamento.nome}

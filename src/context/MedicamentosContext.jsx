@@ -42,7 +42,6 @@ export const MedicamentosContextProvider = ({ children }) => {
     setListaMedicamentos(novaLista);
     setListaMedicamentosOriginal(novaLista);
     alert("Medicamento Cadastrado com sucesso!");
-    console.log(novaLista);
   };
 
   const PesquisarMedicamentos = (termo) => {
@@ -66,9 +65,20 @@ export const MedicamentosContextProvider = ({ children }) => {
     }
   };
 
+  const removerMedicamento = (id) => {
+    const medicamentoIndex = listaMedicamentosOriginal.findIndex(item => item.id === id);
+    
+    if (medicamentoIndex !== -1) {
+      const novaLista = listaMedicamentosOriginal.filter(item => item.id !== id);
+      localStorage.setItem("listaMedicamentos", JSON.stringify(novaLista));
+      setListaMedicamentos(novaLista);
+      setListaMedicamentosOriginal(novaLista);
+    }
+  }    
+
   return (
     <MedicamentosContext.Provider
-      value={{ listaMedicamentos, AdicionarMedicamento, PesquisarMedicamentos }}
+      value={{ listaMedicamentos, AdicionarMedicamento, PesquisarMedicamentos, removerMedicamento }}
     >
       {children}
     </MedicamentosContext.Provider>
