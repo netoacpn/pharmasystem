@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { Mapa } from "../pages/mapa"
-import { CadastroFarmacia } from "../pages/cadastro de farmácia"
-import { CadastroMedicamento } from "../pages/cadastro de medicamento"
-import { ListaMedicamentos } from "../pages/lista medicamento"
+import { CadastroFarmacia } from "../pages/cadastroDeFarmacia"
+import { CadastroMedicamento } from "../pages/cadastroDeMedicamento"
+import { ListaMedicamentos } from "../pages/listaMedicamentos"
 import { NotFound } from "../pages/404"
 import { Home } from "../pages/home";
 import ROUTES_PATH from "./routesPath.js"

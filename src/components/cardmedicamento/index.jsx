@@ -10,7 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { MedicamentosContext } from '../../context/MedicamentosContext';
+import { MedicamentosContext } from '../../context/medicamentosContext';
 import { useContext } from 'react';
 
 const ExpandMore = styled((props) => {

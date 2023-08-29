@@ -73,6 +73,7 @@ export const MedicamentosContextProvider = ({ children }) => {
       localStorage.setItem("listaMedicamentos", JSON.stringify(novaLista));
       setListaMedicamentos(novaLista);
       setListaMedicamentosOriginal(novaLista);
+      alert("Medicamento removido com sucesso!")
     }
   }    
 

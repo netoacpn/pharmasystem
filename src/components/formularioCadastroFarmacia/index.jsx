@@ -1,6 +1,6 @@
 import React from "react"
 import { useContext, useState } from "react"
-import { FarmaciasContext } from "../../context/FarmaciasContext"
+import { FarmaciasContext } from "../../context/farmaciasContext"
 import { Container, TextField, ButtonGroup, Button, Box, Typography, InputAdornment } from "@mui/material"
 
 function FormularioNovaFarmacia(){

@@ -1,6 +1,6 @@
 import { Header } from "../../components/header/index.jsx"
 import { Box, Container, Typography } from "@mui/material" 
-import { FormularioNovoMedicamento } from "../../components/cadmedform"
+import { FormularioNovoMedicamento } from "../../components/formularioCadastroMedicamento"
 
 function CadastroMedicamento(){
   return(

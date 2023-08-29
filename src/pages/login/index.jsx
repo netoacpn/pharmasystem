@@ -1,6 +1,6 @@
 import { Header } from "../../components/header/index.jsx"
 import { Container, Box, Typography } from "@mui/material"
-import { FormularioLogin } from "../../components/loginform"
+import { FormularioLogin } from "../../components/formularioLogin"
 
 function Login(){
   return(

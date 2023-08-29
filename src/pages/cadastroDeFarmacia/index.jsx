@@ -1,4 +1,4 @@
-import { FormularioNovaFarmacia } from "../../components/cadfarmform"
+import { FormularioNovaFarmacia } from "../../components/formularioCadastroFarmacia"
 import { Header } from "../../components/header/index.jsx"
 import { Container, Box, Typography } from "@mui/material"
 

@@ -1,7 +1,7 @@
 import './App.css'
 import { RoutesApp } from './routes'
 import { BrowserRouter } from 'react-router-dom'
-import { LocalStorageProvider } from './context/LocalStorageContext'
+import { LocalStorageProvider } from './context/localStorageContext'
 
 function App() {
 

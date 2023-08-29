@@ -12,7 +12,7 @@ import SideBar from "../sidebar/index"
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { MedicamentosContext } from '../../context/MedicamentosContext';
+import { MedicamentosContext } from '../../context/medicamentosContext';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
