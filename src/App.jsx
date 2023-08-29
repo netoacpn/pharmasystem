@@ -1,4 +1,6 @@
 import './App.css'
+import { MedicamentosContextProvider } from './context/medicamentosContext.jsx';
+import { FarmaciasContextProvider } from './context/farmaciasContext.jsx';
 import { RoutesApp } from './routes'
 import { BrowserRouter } from 'react-router-dom'
 import { LocalStorageProvider } from './context/localStorageContext'
@@ -6,11 +8,15 @@ import { LocalStorageProvider } from './context/localStorageContext'
 function App() {
 
   return (
-    <BrowserRouter>
-      <LocalStorageProvider>
-        <RoutesApp />
-      </ LocalStorageProvider>
-    </BrowserRouter>
+    <MedicamentosContextProvider>
+      <FarmaciasContextProvider>
+        <BrowserRouter>
+          <LocalStorageProvider>
+            <RoutesApp />
+          </ LocalStorageProvider>
+        </BrowserRouter>
+      </FarmaciasContextProvider>
+    </ MedicamentosContextProvider>
   )
 }
 
