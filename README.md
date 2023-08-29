@@ -25,7 +25,7 @@ A página de listagem de medicamentos permite que os funcionários das farmácia
 1. **Acessando o projeto em deploy**
 
   ```
-  O aplicativo estará disponível em (**link meramente exemplificativo**) "https://pharmasystem.vercel.app/"
+  O aplicativo estará disponível em "https://pharmasystem.vercel.app/"
   ```
 
 1. **Clonar o repositório:**
@@ -47,7 +47,7 @@ A página de listagem de medicamentos permite que os funcionários das farmácia
    npm start
    ```
 
-   O aplicativo estará disponível em [http://localhost:3000](http://localhost:3000).
+   O aplicativo estará disponível em [http://localhost:5173/](http://localhost:5173/).
 
 ## Contribuição
 
@@ -58,8 +58,8 @@ Contribuições são bem-vindas! Se você deseja participar do desenvolvimento d
 - ReactJS: Biblioteca JavaScript para a construção de interfaces de usuário interativas;
 - Leaflet;
 - Router-Dom;
-- Bootstrap;
-- React-Bootstrap.
+- Material UI; 
+- Axios.
 
 ## Desenvolvedor
 

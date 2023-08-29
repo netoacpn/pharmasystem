@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "image": "https://img.freepik.com/vetores-gratis/isometricos-pessoas-que-trabalham-com-tecnologia_52683-19076.jpg?w=1380&t=st=1693276079~exp=1693276679~hmac=580849cafc3163c4657645e3e8682e0dc0f6c75b2d07da0cb50d559ee79d3b2d",
+    "title": "Sistema"
+  },
+  {
+    "id": 2,
+    "image": "https://img.freepik.com/fotos-gratis/abstrato-borrao-shopping_1203-8820.jpg?w=1380&t=st=1693274265~exp=1693274865~hmac=ec93bd6a2809c1852a97757f67a07716d0c9b83c5fc7e42ba65d5a1ba9ceee63",
+    "title": "Farmácia 1"
+  },
+  {
+    "id": 3,
+    "image": "https://img.freepik.com/fotos-gratis/blur-shopping-center_1203-8319.jpg?w=1380&t=st=1693274251~exp=1693274851~hmac=42898b2d579d45410bbf2718aa27f38c51f67823d9ac3910b4e924e62492c794",
+    "title": "Farmácia 3"
+  }
+]
