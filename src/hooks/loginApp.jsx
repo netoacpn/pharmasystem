@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { LocalStorageContext } from "../context/LocalStorageContext"
+import { LocalStorageContext } from "../context/localStorageContext"
 
 function loginApp(){
   const context = useContext(LocalStorageContext)
