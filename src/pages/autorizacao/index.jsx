@@ -18,7 +18,7 @@ function SemAutorizacao(){
       <Header />
       <Container>
         <Box>
-          <Typography variant="h3" gutterBottom sx={{m: "15px", alignItems: "center"}}>Você não possui autorização para acessar esta página. Faça Login.</Typography>
+          <Typography variant="h3" gutterBottom sx={{m: "15px", alignItems: "center"}}>Você não possui autorização para acessar esta página. <br /> <br />Faça Login.</Typography>
         </Box>
       </Container>
     </>
