@@ -27,7 +27,7 @@ function MapaComponente(){
             Nome Fantasia: {farmacia.nomeFantasia} <br/>
             E-mail: {farmacia.email} <br/>
             {farmacia.telefone && (<>Telefone: {farmacia.telefone}<br /></>)}
-            Celular: <a href={`https://wa.me/55${farmacia.celular}`}>{farmacia.celular}</a><br/>
+            Celular: <a href={`https://wa.me/55${farmacia.celular}`} target="_blank">{farmacia.celular}</a><br/>
             CEP: {farmacia.cep} <br/>
             Logradouro: {farmacia.logradouro} <br/>
             Número: {farmacia.numero} <br/>
