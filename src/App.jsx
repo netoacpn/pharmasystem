@@ -3,7 +3,7 @@ import { MedicamentosContextProvider } from './context/MedicamentosContext';
 import { FarmaciasContextProvider } from './context/FarmaciasContext';
 import { RoutesApp } from './routes'
 import { BrowserRouter } from 'react-router-dom'
-import { LocalStorageProvider } from './context/localStorageContext'
+import { LocalStorageProvider } from './context/LocalStorageContext';
 
 function App() {
 
