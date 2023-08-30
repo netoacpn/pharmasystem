@@ -93,7 +93,7 @@ function FormularioNovaFarmacia(){
             InputProps={{startAdornment: <InputAdornment position="start"></InputAdornment>}}
             label="CNPJ"
             value={cnpj}
-            onChange={(e) => setCnpj(Number(e.target.value))}
+            onChange={(e) => setCnpj(e.target.value)}
           />
           <TextField
             sx={{m: 1}}
