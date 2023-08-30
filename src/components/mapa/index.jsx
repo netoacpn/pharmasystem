@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { FarmaciasContext } from "../../context/farmaciasContext"
+import { FarmaciasContext } from "../../context/FarmaciasContext"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { Icon } from "leaflet"
 import 'leaflet/dist/leaflet.css'
