@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { MedicamentosContext } from "../../context/MedicamentosContext";
 import { HeaderLista } from "../../components/headerpesquisa";
 import { Container, Box, Grid, Typography } from "@mui/material";
-import CardMedicamento from "../../components/cardMedicamento";
+import CardMedicamento from "../../components/cardmedicamento";
 
 function ListaMedicamentos() {
   const { listaMedicamentos } = useContext(MedicamentosContext);
