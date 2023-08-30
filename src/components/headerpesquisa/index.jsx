@@ -100,7 +100,7 @@ function HeaderLista() {
               </IconButton>
             </div>
           )}
-          <WebhookIcon />
+          <WebhookIcon sx={{color:"#0d6efd"}}/>
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             PharmaSystem
